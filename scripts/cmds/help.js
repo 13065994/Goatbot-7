@@ -1,10 +1,11 @@
-const fs = require("fs-extra");
+t;
+}const fs = require("fs-extra");
 const axios = require("axios");
 const path = require("path");
 const { getPrefix } = global.utils;
 const { commands, aliases } = global.GoatBot;
-const doNotDelete = "[ 🐐 | Goat Bot V2 ]";
-/** 
+const doNotDelete = "➛「𝐠𝐞𝐫𝐚𝐥𝐝✮𝐛𝐨𝐭」";
+/**
 * @author NTKhang
 * @author: do not delete it
 * @message if you delete or edit it you will get a global ban
@@ -13,15 +14,11 @@ const doNotDelete = "[ 🐐 | Goat Bot V2 ]";
 module.exports = {
 	config: {
 		name: "help",
-		version: "1.18",
+		version: "1.21",
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		shortDescription: {
-			vi: "Xem cách dùng lệnh",
-			en: "View command usage"
-		},
-		longDescription: {
+		description: {
 			vi: "Xem cách sử dụng của các lệnh",
 			en: "View command usage"
 		},
@@ -104,23 +101,27 @@ module.exports = {
 			pageNotFound: "Trang %1 không tồn tại"
 		},
 		en: {
-			help: "╭─────────────⭓"
-				+ "\n%1"
+			help: "╭─────────────✪"
+				+ "\n${prefix}%1"
 				+ "\n├─────⭔"
-				+ "\n│ Page [ %2/%3 ]"
-				+ "\n│ Currently, the bot has %4 commands that can be used"
-				+ "\n│ » Type %5help <page> to view the command list"
-				+ "\n│ » Type %5help to view the details of how to use that command"
-				+ "\n├────────⭔"
+				+ "\n│ page [ %2/%3 ]"
+				+ "\n│ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐧𝐮𝐦𝐛𝐞𝐫 𝐢𝐧 𝐭𝐨𝐭𝐚𝐥: %4 "
+				+ "\n│ ➛ 𝑻𝒚𝒑𝒆 %5𝒉𝒆𝒍𝒑 <𝒑𝒂𝒈𝒆> 𝒕𝒐 𝒗𝒊𝒆𝒘 𝒕𝒉𝒆 𝒄𝒐𝒎𝒎𝒂𝒏𝒅 𝒍𝒊𝒔𝒕 "
+				+ "\n│ ➛ 𝐓𝐲𝐩𝐞 %5𝐡𝐞𝐥𝐩 𝐭𝐨 𝐯𝐢𝐞𝐰 𝐭𝐡𝐞 𝐝𝐞𝐭𝐚𝐢𝐥𝐬 𝐨𝐟 𝐡𝐨𝐰 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐚𝐭 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 "
+                                + "\n│ ⚠️| 𝘪𝘯𝘧𝘰: 𝘵𝘩𝘪𝘴 𝘣𝘰𝘵 𝘸𝘢𝘴 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘣𝘺「𝘎𝘦𝘳𝘢𝘭𝘥-𝘮𝘢𝘹」
+                                + "\n│ 𝘩𝘪𝘴 𝘭𝘪𝘯𝘬 𝘵𝘰 𝘱𝘳𝘰𝘧𝘪𝘭𝘦: www.facebook.com/100088249106822"
+				+ "\n├────────✪"
 				+ "\n│ %6"
-				+ "\n╰─────────────⭓",
-			help2: "%1├───────⭔"
-				+ "\n│ » Currently, the bot has %2 commands that can be used"
-				+ "\n│ » Type %3help <command name> to view the details of how to use that command"
-				+ "\n│ %4"
-				+ "\n╰─────────────⭓",
-			commandNotFound: "Command \"%1\" does not exist",
-			getInfoCommand: "╭── NAME ────⭓"
+				+ "\n╰─────────────✪",
+			help2: "%1├───────✪"
+				+ "\n│ ➛ 𝐜𝐨𝐦𝐦𝐚𝐧𝐝 𝐧𝐮𝐦𝐛𝐞𝐫 𝐢𝐧 𝐭𝐨𝐭𝐚𝐥: %4 "
+				+ "\n│ ➛ 𝐓𝐲𝐩𝐞 %5𝐡𝐞𝐥𝐩 𝐭𝐨 𝐯𝐢𝐞𝐰 𝐭𝐡𝐞 𝐝𝐞𝐭𝐚𝐢𝐥𝐬 𝐨𝐟 𝐡𝐨𝐰 𝐭𝐨 𝐮𝐬𝐞 𝐭𝐡𝐚𝐭 𝐜𝐨𝐦𝐦𝐚𝐧𝐝"
+				+ "\n│⚠️| 𝘪𝘯𝘧𝘰:𝘵𝘩𝘪𝘴 𝘣𝘰𝘵 𝘸𝘢𝘴 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘣𝘺「𝘎𝘦𝘳𝘢𝘭𝘥-𝘮𝘢𝘹」
+				+ "\n│ 𝘩𝘪𝘴 𝘭𝘪𝘯𝘬 𝘵𝘰 𝘱𝘳𝘰𝘧𝘪𝘭𝘦: www.facebook.com/100088249106822
+				+ "\n│ %4 "
+				+ "\n╰─────────────✪",
+			commandNotFound: "Command \"%1\" does not exist in gerald system.",
+			getInfoCommand: "╭── NaMe ────⭓"
 				+ "\n│ %1"
 				+ "\n├── INFO"
 				+ "\n│ Description: %2"
@@ -129,14 +130,14 @@ module.exports = {
 				+ "\n│ Version: %5"
 				+ "\n│ Role: %6"
 				+ "\n│ Time per command: %7s"
-				+ "\n│ Author: %8"
+				+ "\n│ Author: max"
 				+ "\n├── USAGE"
 				+ "\n│%9"
 				+ "\n├── NOTES"
 				+ "\n│ The content inside <XXXXX> can be changed"
 				+ "\n│ The content inside [a|b|c] is a or b or c"
 				+ "\n╰──────⭔",
-			onlyInfo: "╭── INFO ────⭓"
+			onlyInfo: "╭──➛ INFO ────⭓"
 				+ "\n│ Command name: %1"
 				+ "\n│ Description: %2"
 				+ "\n│ Other names: %3"
@@ -144,7 +145,7 @@ module.exports = {
 				+ "\n│ Version: %5"
 				+ "\n│ Role: %6"
 				+ "\n│ Time per command: %7s"
-				+ "\n│ Author: %8"
+				+ "\n│ Author: gerald"
 				+ "\n╰─────────────⭓",
 			onlyUsage: "╭── USAGE ────⭓"
 				+ "\n│%1"
@@ -166,7 +167,7 @@ module.exports = {
 		}
 	},
 
-	onStart: async function ({ message, args, event, threadsData, getLang, role }) {
+	onStart: async function ({ message, args, event, threadsData, getLang, role, globalData }) {
 		const langCode = await threadsData.get(event.threadID, "data.lang") || global.GoatBot.config.language;
 		let customLang = {};
 		const pathCustomLang = path.normalize(`${process.cwd()}/languages/cmds/${langCode}.js`);
@@ -180,7 +181,32 @@ module.exports = {
 		if (!["category", "name"].includes(sortHelp))
 			sortHelp = "name";
 		const commandName = (args[0] || "").toLowerCase();
-		const command = commands.get(commandName) || commands.get(aliases.get(commandName));
+		let command = commands.get(commandName) || commands.get(aliases.get(commandName));
+		const aliasesData = threadData.data.aliases || {
+			// uid: ["userid", "id"]
+		};
+		if (!command) {
+			for (const cmdName in aliasesData) {
+				if (aliasesData[cmdName].includes(commandName)) {
+					command = commands.get(cmdName);
+					break;
+				}
+			}
+		}
+
+		if (!command) {
+			const globalAliasesData = await globalData.get('setalias', 'data', []);
+			// [{
+			// 	commandName: "uid",
+			// 	aliases: ["uid", "id]
+			// }]
+			for (const item of globalAliasesData) {
+				if (item.aliases.includes(commandName)) {
+					command = commands.get(item.commandName);
+					break;
+				}
+			}
+		}
 
 		// ———————————————— LIST ALL COMMAND ——————————————— //
 		if (!command && !args[0] || !isNaN(args[0])) {
@@ -193,14 +219,14 @@ module.exports = {
 					if (value.config.role > 1 && role < value.config.role)
 						continue;
 					let describe = name;
-					let shortDescription;
-					const shortDescriptionCustomLang = customLang[name]?.shortDescription;
-					if (shortDescriptionCustomLang != undefined)
-						shortDescription = checkLangObject(shortDescriptionCustomLang, langCode);
-					else if (value.config.shortDescription)
-						shortDescription = checkLangObject(value.config.shortDescription, langCode);
-					if (shortDescription)
-						describe += `: ${cropContent(shortDescription.charAt(0).toUpperCase() + shortDescription.slice(1))}`;
+					let description;
+					const descriptionCustomLang = customLang[name]?.description;
+					if (descriptionCustomLang != undefined)
+						description = checkLangObject(descriptionCustomLang, langCode);
+					else if (value.config.description)
+						description = checkLangObject(value.config.description, langCode);
+					if (description)
+						describe += `: ${cropContent(description.charAt(0).toUpperCase() + description.slice(1), 50)}`;
 					arrayInfo.push({
 						data: describe,
 						priority: value.priority || 0
@@ -281,8 +307,8 @@ module.exports = {
 					getLang("roleText2");
 
 			const author = configCommand.author;
-			const descriptionCustomLang = customLang[configCommand.name]?.longDescription;
-			let description = checkLangObject(configCommand.longDescription, langCode);
+			const descriptionCustomLang = customLang[configCommand.name]?.description;
+			let description = checkLangObject(configCommand.description, langCode);
 			if (description == undefined)
 				if (descriptionCustomLang != undefined)
 					description = checkLangObject(descriptionCustomLang, langCode);
@@ -300,9 +326,30 @@ module.exports = {
 			else if (args[1]?.match(/^-r|role$/))
 				formSendMessage.body = getLang("onlyRole", roleText);
 			else if (args[1]?.match(/^-i|info$/))
-				formSendMessage.body = getLang("onlyInfo", configCommand.name, description, aliasesString, aliasesThisGroup, configCommand.version, roleText, configCommand.countDown || 1, author || "");
+				formSendMessage.body = getLang(
+					"onlyInfo",
+					configCommand.name,
+					description,
+					aliasesString,
+					aliasesThisGroup,
+					configCommand.version,
+					roleText,
+					configCommand.countDown || 1,
+					author || ""
+				);
 			else {
-				formSendMessage.body = getLang("getInfoCommand", configCommand.name, description, aliasesString, aliasesThisGroup, configCommand.version, roleText, configCommand.countDown || 1, author || "", `${guideBody.split("\n").join("\n│")}`);
+				formSendMessage.body = getLang(
+					"getInfoCommand",
+					configCommand.name,
+					description,
+					aliasesString,
+					aliasesThisGroup,
+					configCommand.version,
+					roleText,
+					configCommand.countDown || 1,
+					author || "",
+					guideBody.split("\n").join("\n│")
+				);
 				sendWithAttachment = true;
 			}
 
@@ -364,4 +411,4 @@ function cropContent(content, max) {
 		content = content + "...";
 	}
 	return content;
-}
+  }
