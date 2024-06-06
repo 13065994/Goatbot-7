@@ -4,12 +4,11 @@ const { utils } = global;
 module.exports = {
 	config: {
 		name: "prefix",
-		version: "1.3",
+		version: "1.4",
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		shortDescription: "Thay đổi prefix của bot",
-		longDescription: "Thay đổi dấu lệnh của bot trong box chat của bạn hoặc cả hệ thống bot (chỉ admin bot)",
+		description: "Thay đổi dấu lệnh của bot trong box chat của bạn hoặc cả hệ thống bot (chỉ admin bot)",
 		category: "config",
 		guide: {
 			vi: "   {pn} <new prefix>: thay đổi prefix mới trong box chat của bạn"
@@ -46,7 +45,7 @@ module.exports = {
 			confirmThisThread: "Please react to this message to confirm change prefix in your box chat",
 			successGlobal: "Changed prefix of system bot to: %1",
 			successThisThread: "Changed prefix in your box chat to: %1",
-			myPrefix: "🌐 System prefix: %1\n🛸 Your box chat prefix: %2"
+			myPrefix: "👋𝚑𝚎𝚕𝚕𝚘 𝚝𝚑𝚎𝚛𝚎,👀𝚒 𝚜𝚎𝚎 𝚢𝚘𝚞 𝚠𝚊𝚗𝚝 𝚝𝚘 𝚔𝚗𝚘𝚠 𝚖𝚢 𝚙𝚛𝚎𝚏𝚒𝚡.\n𝚜𝚢𝚜𝚝𝚎𝚖 𝚙𝚛𝚎𝚏𝚒𝚡:❛ %1 ❜\n𝚢𝚘𝚞𝚛 𝚌𝚑𝚊𝚝 𝚙𝚛𝚎𝚏𝚒𝚡ツ:❛ %2 ❜\n╠═══▏ ⌬◮◭◅▻ᗤ▕═══╣\n📃| 𝚑𝚘𝚠 𝚝𝚘 𝚞𝚜𝚎 𝚖𝚢 𝚙𝚛𝚎𝚏𝚒𝚡\n\n❶%2𝚑𝚎𝚕𝚙\n❷%2𝚘𝚠𝚗𝚎r\n╠═══▏⌬◮◭◅▻ᗤ▕═══╣\n𝒃𝒐𝒕 𝒐𝒘𝒏𝒆𝒓: www.facebook.com/100088249106822 ツ"
 		}
 	},
 
