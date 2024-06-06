@@ -41,19 +41,16 @@ module.exports = {
     const result = await speedTest.getSpeed();
     const botName = global.GoatBot.config.nickNameBot;
     const botPrefix = global.GoatBot.config.prefix;
-    const authorName = global.GoatBot.config.authorName;
-    const authorFB = global.GoatBot.config.authorFB;
-    const authorInsta = "https://www.instagram.com/xnil867";
-    const authorEmail = global.GoatBot.config.authorEmail;
-    const authorGithub = "https://github.com/X-nil143";
-    const status = "𝙎𝙞𝙣𝙜𝙡𝙚";
+    const authorName = "「gerald-max」旦";
+    const authorFB = "www.facebook.com/gerald.max.beast";
+    const authorInsta = "https://www.instagram.com/null";
+    const authorEmail = "g13065994@gmail.com";
+    const authorGithub = "https://github.com/13065994";
+    const status = "I'm single, I'm not desperate to have a GF 😒😈";
     const timeStart = Date.now();
 
-    const urls = JSON.parse(fs.readFileSync('scripts/cmds/xnil/info.json'));
-    const link = urls[Math.floor(Math.random() * urls.length)];
-
     // Get current date and time in Asia/Kathmandu timezone
-    const now = moment().tz('Asia/Dhaka');
+    const now = moment().tz('Africa/lagos');
     const date = now.format('MMMM Do YYYY');
     const time = now.format('h:mm:ss A');
 
@@ -64,20 +61,20 @@ module.exports = {
     const ping = Date.now() - timeStart;
 
     const replyMessage = `===「 Bot & Owner Info 」===
-❏ Bot Name: ${botName}
-❏ Bot Prefix: ${botPrefix}
-❏ Author Name: ${authorName}
-❏ FB: ${authorFB}
-❏ Instagram: ${authorInsta}
-❏ Author Email: ${authorEmail}
-❏ Author Github: ${authorGithub}
-❏ Status: ${status}
-❏ Date: ${date}
-❏ Total Threads: ${allThreads.length}
-❏ Total Users: ${allUsers.length}
-❏ Time: ${time}
-❏ Bot Running: ${uptimeString}
-❏ Bot's Speed: ${result} MBPS
+ Bot Name: ${botName}
+ Bot Prefix: ${botPrefix}
+ Author Name: ${authorName}
+ FB: ${authorFB}
+ Instagram: ${authorInsta}
+ Author Email: ${authorEmail}
+ Author Github: ${authorGithub}
+ Status: ${status}
+ Date: ${date}
+ Total Threads: ${allThreads.length}
+ Total Users: ${allUsers.length}
+ Time: ${time}
+ Bot Running: ${uptimeString}
+ Bot's Speed: ${result} MBPS
 =====================`;
 
     const attachment = await global.utils.getStreamFromURL(link);
