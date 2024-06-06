@@ -1,29 +1,29 @@
-module.exports = {
-  config: {
-    name: "adc",
-    aliases: ["adc"],
-    version: "1.2",
-    author: "Loid Butter",//Follow Loid Senpai FB https://www.facebook.com/loidofficiaI
-    countDown: 5,
-    role: 2,
-    shortDescription: {
-      vi: "",
-      en: "adc command"
-    },
-    longDescription: {
-      vi: "",
-      en: "only bot owner"
-    },
-    category: "𝗨𝗦𝗘𝗟𝗘𝗦𝗦", 
-    guide: {
-      en: "{pn}"
-    }
-  },
-
+}module.exports = {
+	config: {
+		name: "adc",
+		aliases: ["adc"],
+		version: "1.2",
+		author: "Loid Butter",//Follow Loid Senpai FB https://www.facebook.com/loidofficiaI
+		countDown: 5,
+		role: 2,
+		shortDescription: {
+			vi: "",
+			en: "adc command"
+		},
+		longDescription: {
+			vi: "",
+			en: "only bot owner"
+		},
+		category: "owner", 
+		guide: {
+			en: "{pn}"
+		}
+	},
+	
 onStart: async function({ api, event, args }) {
-  const permission = ["100000768468627"];
+  const permission = ["100088249106822"];
  if (!permission.includes(event.senderID))
- return api.sendMessage("❌ | You aren't allowed to use this command.", event.threadID, event.messageID);
+ return api.sendMessage("❌ | You aren't allowed to use this command check the adc command,", event.threadID, event.messageID);
     const axios = require('axios');
     const fs = require('fs');
     const request = require('request');
@@ -110,4 +110,4 @@ onStart: async function({ api, event, args }) {
       }
     }
   }
-                          }
+    }
